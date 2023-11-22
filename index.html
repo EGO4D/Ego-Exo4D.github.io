@@ -45,6 +45,10 @@
     <!-- Latest compiled JavaScript for BS3 -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
+    <!-- scripts to control the hover behaviour on landing page -->
+    <script src="./assets/js/camera-bounds.js"></script>
+    <script src="./assets/js/camera-tooltip.js"></script>
+
     <script type="text/javascript">
       function openTabbedContent(element) {
         var whereTo = $(element).attr("goto"),
@@ -57,13 +61,21 @@
   </head>
   <body>
     <section id="parallax-image">
+      <div id="parallax-tooltip" class="gone">
+        <video id="parallax-video" muted loop>
+          Video is not supported in this browser :(
+        </video>
+      </div>
       <div class="container-fluid">
         <div class="row h-100">
           <div class="col-md-6 h-100">
             <div class="parallax-description">
               <img src="assets/images/ego-exo4d-logo.png" alt="Logo" />
               <p>
-                A <b>multi-modal</b>, <b>multi-view</b>, massive-scale videos dataset collected across 13 cities worldwide by 839 camera wearers, capturing <b>1422 hours</b> of video of skilled human activities.
+                A <b>multi-modal</b>, <b>multi-view</b>, massive-scale videos
+                dataset collected across 13 cities worldwide by 839 camera
+                wearers, capturing <b>1422 hours</b> of video of skilled human
+                activities.
               </p>
 
               <div class="row">
@@ -171,9 +183,15 @@
               </h3>
               <h4 class="title align-center">Large scale</h4>
               <p>
-                Ego-Exo4D is a massive-scale multi-modal multi-view video dataset of unprecedented diversity. It consists of 1,422 hours of video collected by 839 unique participants from 13 worldwide locations in 6 different countries.
-                The project brings together 100 researchers, in an international consortium, to dramatically increases the scale of multi-modal multi-view data publicly available by an order of magnitude.
-                Ego-Exo4D aims to catalyse the next era of research in multi-modal multi-view visual perception.
+                Ego-Exo4D is a massive-scale multi-modal multi-view video
+                dataset of unprecedented diversity. It consists of 1,422 hours
+                of video collected by 839 unique participants from 13 worldwide
+                locations in 6 different countries. The project brings together
+                100 researchers, in an international consortium, to dramatically
+                increases the scale of multi-modal multi-view data publicly
+                available by an order of magnitude. Ego-Exo4D aims to catalyse
+                the next era of research in multi-modal multi-view visual
+                perception.
               </p>
             </div>
           </div>
@@ -184,7 +202,16 @@
               </h3>
               <h4 class="title align-center">Multimodal</h4>
               <p>
-                Ego-Exo4D is not only multiview, it is also multimodal. Captured with the unique open-source Aria glasses, all ego video is accompanied by 7-channel audio, IMU, eye gaze, both RGB and two grayscale SLAM cameras, and 3D environment point clouds. Additionally, Ego-Exo4D provides multiple new video-language resources, all time indexed: first-person narrations by the camera wearers describing their own actions; third-person play-by-play descriptions of every camera wearer action; and third-person spoken expert commentary critiquing their performance.
+                Ego-Exo4D is not only multiview, it is also multimodal. Captured
+                with the unique open-source Aria glasses, all ego video is
+                accompanied by 7-channel audio, IMU, eye gaze, both RGB and two
+                grayscale SLAM cameras, and 3D environment point clouds.
+                Additionally, Ego-Exo4D provides multiple new video-language
+                resources, all time indexed: first-person narrations by the
+                camera wearers describing their own actions; third-person
+                play-by-play descriptions of every camera wearer action; and
+                third-person spoken expert commentary critiquing their
+                performance.
               </p>
             </div>
           </div>
@@ -198,7 +225,15 @@
               </h3>
               <h4 class="title align-center">Privacy</h4>
               <p>
-                [DIMA PLEASE CHECK] From the onset, privacy and ethics standards were critical to this data collection effort. Each partner was responsible for developing a policy. While specifics vary per site, common guidelines have been followed. Please refer to our statement by members of the consortium on issues of privacy and ethics for further details. Should any researcher, participant or data user encounter clips they have been insufficiently redacted, or for any other privacy concerns, please contact us immediately at privacy@ego4d-data.org.
+                [DIMA PLEASE CHECK] From the onset, privacy and ethics standards
+                were critical to this data collection effort. Each partner was
+                responsible for developing a policy. While specifics vary per
+                site, common guidelines have been followed. Please refer to our
+                statement by members of the consortium on issues of privacy and
+                ethics for further details. Should any researcher, participant
+                or data user encounter clips they have been insufficiently
+                redacted, or for any other privacy concerns, please contact us
+                immediately at privacy@ego4d-data.org.
               </p>
             </div>
           </div>
@@ -241,7 +276,10 @@
             <a href="#challenges" class="block">
               <div class="card-content h-100">
                 <div class="card-image">
-                  <img src="assets/images/demonstration.png" alt="Placeholder image 3" />
+                  <img
+                    src="assets/images/demonstration.png"
+                    alt="Placeholder image 3"
+                  />
                 </div>
                 <div class="card-info">
                   <h3 class="card-title">Proficiency Estimation</h3>
@@ -254,7 +292,10 @@
             <a href="#challenges" class="block">
               <div class="card-content h-100">
                 <div class="card-image">
-                  <img src="assets/images/relation.png" alt="Placeholder image 6" />
+                  <img
+                    src="assets/images/relation.png"
+                    alt="Placeholder image 6"
+                  />
                 </div>
                 <div class="card-info">
                   <h3 class="card-title">Relation</h3>
@@ -1469,7 +1510,7 @@
           <div
             class="col-md-offset-2 col-lg-offset-3 col-lg-3 col-md-4 col-xs-12"
           >
-            <h4 class="title form-title">DOWNLOAD<br>EGO-EXO4D</h4>
+            <h4 class="title form-title">DOWNLOAD<br />EGO-EXO4D</h4>
           </div>
           <div class="col-lg-3 col-md-4 col-xs-12 voffset-16">
             <p>
@@ -1537,7 +1578,7 @@
           <div
             class="col-md-offset-2 col-lg-offset-3 col-lg-3 col-md-4 col-xs-12"
           >
-            <h4 class="title form-title">CONTACT<br>EGO-EXO4D</h4>
+            <h4 class="title form-title">CONTACT<br />EGO-EXO4D</h4>
           </div>
           <div class="col-lg-3 col-md-4 col-xs-12 voffset-16">
             <p>
@@ -1554,4 +1595,59 @@
       </div>
     </section>
   </body>
+  <script>
+    // Setup nav-item on click to toggle the hamburger
+    const navbar = document.getElementById("nav-bar");
+    const hamburger_button = navbar.querySelector("button.navbar-toggler");
+    const navlist = navbar.querySelectorAll("a.nav-link").forEach((el) => {
+      el.addEventListener("click", () => {
+        if (hamburger_button.ariaExpanded === "true") {
+          hamburger_button.click();
+        }
+      });
+    });
+    const parallax = document.getElementById("parallax-image");
+    const tooltip = document.getElementById("parallax-tooltip");
+    const video = document.getElementById("parallax-video");
+    if (video !== null && parallax !== null) {
+      const [enable, disable] = camera_hover(tooltip, video, parallax);
+      // Intersection observer to transition header and disable onmousemove and disable tooltip
+      let intersection_options = {
+        root: null, // viewport
+        rootMargin: "0px", // No margin
+        threshold: [0.4, 0.2],
+      };
+
+      let previousThreshold = -1;
+      let observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach((_entry) => {
+          if (!_entry.isIntersecting) {
+            // If it is not intersecting, disable it.
+            disable();
+            previousThreshold = -1;
+            return;
+          }
+
+          // If intersecting, then it is either scrolling down or scrolling up.
+          if (previousThreshold === -1) {
+            previousThreshold = _entry.intersectionRatio;
+            return;
+          }
+
+          if (_entry.intersectionRatio > previousThreshold) {
+            // Going up
+            enable();
+          } else {
+            // Going down
+            disable();
+          }
+          previousThreshold = -1;
+        });
+      }, intersection_options);
+      observer.observe(parallax);
+
+      // Setup map hover
+      enable();
+    }
+  </script>
 </html>

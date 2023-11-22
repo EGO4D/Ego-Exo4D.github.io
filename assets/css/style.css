@@ -519,21 +519,36 @@ a.btn-translucent {
   position: relative;
   background-color: transparent;
 }
-/* https://css-tricks.com/books/fundamental-css-tactics/infinite-scrolling-background-image/ */
 
-#parallax-image::before {
-  content: "";
-  height: 100vh;
-  max-height: 100vh;
-  width: calc(100vh * 5.859375);
-  background: url("../images/ego-exo4d-poster.png") 50% 25% / contain no-repeat
-    fixed;
-  display: block;
+#parallax-tooltip {
   position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  backface-visibility: hidden;
+  bottom: -9999px;
+  left: 9999px;
+  height: 360px;
+  width: 640px;
+  margin: 0.5em;
+  background-color: #fff;
+  z-index: 100;
+  -webkit-box-shadow: 0px 10px 8px -4px #777;
+  -moz-box-shadow: 0px 10px 8px -4px #777;
+  box-shadow: 0px 10px 8px -2px #777;
+  transition: width 0.25s, height 0.25s;
+  -webkit-transition: width 0.25s, height 0.25s;
+  -moz-transition: width 0.25s, height 0.25s;
+}
+
+#parallax-video {
+  max-height: 100%;
+  max-width: 100%;
+  padding: 0.5em;
+  object-fit: contain;
+  opacity: 0;
+}
+#parallax-video.fade-in {
+  opacity: 1;
+  transition: opacity 0.25s 0.5s;
+  -webkit-transition: opacity 0.25s 0.5s;
+  -moz-transition: opacity 0.25s 0.5s;
 }
 
 #parallax-image > .container-fluid {
@@ -581,8 +596,8 @@ a.btn-translucent {
 }
 @media screen and (min-width: 1025px) and (min-height: 512px) {
   #parallax-image {
-    background: url("../images/ego-exo4d-poster.png") 50% 25% / contain
-      no-repeat fixed;
+    background: black url("../images/cooking-pointcloud.png") 50% 50% / cover
+      no-repeat border-box fixed;
   }
   #parallax-image::before {
     display: none !important;
