@@ -26,6 +26,7 @@ function camera_hover(tooltip, video, parallax, scenario_selector) {
     return;
   }
   // Disable map hover if bbox falls outside.
+  const cover_video = parallax.querySelector("#cover-video");
 
   let pw = window.innerWidth,
     ph = window.innerHeight;
@@ -49,7 +50,7 @@ function camera_hover(tooltip, video, parallax, scenario_selector) {
         return;
       }
       currentScenario = selected_scenario;
-      parallax.style.background = `black url("assets/images/scenarios/${currentScenario}.png") 50% 50% / cover no-repeat border-box fixed`;
+      parallax.style.background = `black url("assets/images/scenarios/${currentScenario}.jpg") 50% 50% / cover no-repeat border-box fixed`;
       disable();
       enable();
       scenario_option.textContent = e.target.textContent;
@@ -169,6 +170,9 @@ function camera_hover(tooltip, video, parallax, scenario_selector) {
     markers = { ...dom_markers };
     delete markers["bbox"];
     if (ph < 512 || pw < 1024) {
+      parallax.style.background = null;
+      cover_video.classList.remove("gone");
+      scenario_selector.classList.add("gone");
       parallax.onmousemove = null;
       parallax.onclick = (e) => {
         if (e.target !== parallax) {
@@ -179,6 +183,9 @@ function camera_hover(tooltip, video, parallax, scenario_selector) {
       };
       return;
     }
+    parallax.style.background = `black url("assets/images/scenarios/${currentScenario}.jpg") 50% 50% / cover no-repeat border-box fixed`;
+    cover_video.classList.add("gone");
+    scenario_selector.classList.remove("gone");
     parallax.onmousemove = onmousemove;
     parallax.onclick = null;
     // if (mx < 0 || Mx >= pw || my < 0 || My >= ph) {

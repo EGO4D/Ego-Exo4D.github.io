@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="assets/css/style.css" />
 
     <link rel="preload" as="image" href="assets/images/ego-exo4d-logo.png" />
+    <link rel="preload" as="image" href="assets/images/scenarios/cooking.jpg" />
     <link rel="icon" href="./assets/images/ego4d-icon.ico" />
 
     <!-- Latest font-awesome css for icons -->
@@ -61,7 +62,17 @@
   </head>
   <body>
     <section id="parallax-image">
-      <div id="scenario_selector">
+      <div id="cover-video" class="gone">
+        <video
+          src="assets/videos/cooking/pointcloud.mp4"
+          autoplay
+          muted
+          loop
+          playsinline
+          poster="assets/images/scenarios/cooking.jpg"
+        ></video>
+      </div>
+      <div id="scenario_selector" class="gone">
         <span style="color: white">Scenario: &emsp;</span>
         <div class="dropdown">
           <button
@@ -200,75 +211,154 @@
       </nav>
     </header>
     <section id="intro" class="container-fluid">
-      <div class="container" style="max-width: 1280px !important">
-        <div class="row">
-          <div class="col-xs-8 col-xs-offset-2 col-md-offset-1 col-md-4 px-2">
-            <div style="margin-bottom: 3rem">
-              <h3 class="title align-center" style="font-size: 8rem">
-                <i class="fas fa-tachometer-alt fa-2xl"></i>
-              </h3>
-              <h4 class="title align-center">Large scale</h4>
-              <p>
-                Ego-Exo4D is a massive-scale multi-modal multi-view video
-                dataset of unprecedented diversity. It consists of 1,422 hours
-                of video collected by 839 unique participants from 13 worldwide
-                locations in 6 different countries. The project brings together
-                100 researchers, in an international consortium, to dramatically
-                increases the scale of multi-modal multi-view data publicly
-                available by an order of magnitude. Ego-Exo4D aims to catalyse
-                the next era of research in multi-modal multi-view visual
-                perception.
-              </p>
+      <div
+        id="carousel"
+        class="carousel slide pointer-event"
+        role="listbox"
+        data-pause="true"
+        data-keyboard="false"
+        data-ride="carousel"
+        data-interval="10000"
+      >
+        <div id="carousel-bg"></div>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+          <div class="item active">
+            <div class="row slide">
+              <div
+                class="col-xs-12 col-md-4 col-lg-4 col-md-offset-1 col-lg-offset-1 slide-content"
+              >
+                <h2 class="title">MASSIVE SCALE</h2>
+                <p class="slide-text">
+                  Ego-Exo4D is a massive-scale multi-modal multi-view video
+                  dataset of unprecedented diversity. It consists of 1,422 hours
+                  of video collected by <b>839 unique participants</b> from
+                  <b>13 worldwide locations</b> in 6 different countries. The
+                  project brings together 100 researchers, in an international
+                  consortium, to dramatically increases the scale of multi-modal
+                  multi-view data publicly available by an order of magnitude.
+                  <br />
+                  <br />
+                  Ego-Exo4D aims to catalyse the next era of research in
+                  multi-modal multi-view visual perception.
+                </p>
+              </div>
+              <div class="col-xs-12 col-md-7 col-lg-7 slide-image-wrap">
+                <img
+                  class="img-responsive slide-image"
+                  src="assets/images/massive.png"
+                  alt="Placeholder image 3"
+                />
+              </div>
             </div>
           </div>
-          <div class="col-xs-8 col-xs-offset-2 col-md-offset-2 col-md-4 px-2">
-            <div style="margin-bottom: 3rem">
-              <h3 class="title align-center" style="font-size: 8rem">
-                <i class="fas fa-globe fa-2xl"></i>
-              </h3>
-              <h4 class="title align-center">Multimodal</h4>
-              <p>
-                Ego-Exo4D is not only multiview, it is also multimodal. Captured
-                with the unique open-source Aria glasses, all ego video is
-                accompanied by 7-channel audio, IMU, eye gaze, both RGB and two
-                grayscale SLAM cameras, and 3D environment point clouds.
-                Additionally, Ego-Exo4D provides multiple new video-language
-                resources, all time indexed: first-person narrations by the
-                camera wearers describing their own actions; third-person
-                play-by-play descriptions of every camera wearer action; and
-                third-person spoken expert commentary critiquing their
-                performance.
-              </p>
+
+          <div class="item">
+            <div class="row slide">
+              <div
+                class="col-xs-12 col-md-4 col-lg-4 col-md-offset-1 col-lg-offset-1 slide-content"
+              >
+                <h2 class="title">MULTIMODAL</h2>
+                <p class="slide-text">
+                  Ego-Exo4D is not only multiview, it is also multimodal.
+                  Captured with the unique open-source Aria glasses, all ego
+                  video is accompanied by 7-channel audio, IMU, eye gaze, both
+                  RGB and two grayscale SLAM cameras, and 3D environment point
+                  clouds. Additionally, Ego-Exo4D provides multiple new
+                  video-language resources, all time indexed: first-person
+                  narrations by the camera wearers describing their own actions;
+                  third-person play-by-play descriptions of every camera wearer
+                  action; and third-person spoken expert commentary critiquing
+                  their performance.
+                  <br />
+                  <br />
+
+                  <a href="#" target="_blank"
+                    >Check our ArXiv paper for details </a
+                  >.
+                </p>
+              </div>
+              <div class="col-xs-12 col-md-7 col-lg-7 slide-image-wrap">
+                <img
+                  class="img-responsive slide-image"
+                  src="assets/images/Ego4D-Collage.jpg"
+                  alt="Scenario Distribution in EGO4D"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="row slide">
+              <div
+                class="col-xs-12 col-md-4 col-lg-4 col-md-offset-1 col-lg-offset-1 slide-content"
+              >
+                <h2 class="title">PRIVACY/ETHICS</h2>
+                <p class="slide-text">
+                  From the onset, privacy and ethics standards were critical to
+                  this data collection effort. Each partner was responsible for
+                  developing a policy. While specifics vary per site, common
+                  guidelines have been followed.<br />
+
+                  Please refer to our
+                  <a
+                    href="assets/pdfs/Ego4D-Privacy-and-ethics-consortium-statement.pdf"
+                    target="_blank"
+                    >statement by members of the consortium on issuess of
+                    privacy and ethics</a
+                  >
+                  for further details.<br /><br />
+
+                  Should any researcher, participant or data user encounter
+                  clips they have been insufficiently redacted, or for any other
+                  privacy concerns, please contact us immediately at
+                  <a href="mailto:privacy@ego4d-data.org"
+                    >privacy@ego4d-data.org</a
+                  >.
+                </p>
+              </div>
+              <div class="col-xs-12 col-md-7 col-lg-7 slide-image-wrap">
+                <img
+                  class="img-responsive slide-image"
+                  src="assets/images/anony.jpg"
+                  alt="Placeholder image 3"
+                />
+              </div>
             </div>
           </div>
         </div>
-        <div class="row visible-md visible-lg" style="margin: 24px"></div>
-        <div class="row">
-          <div class="col px-2 center-block">
-            <div style="margin-bottom: 3rem">
-              <h3 class="title align-center" style="font-size: 8rem">
-                <i class="fas fa-object-group fa-2xl"></i>
-              </h3>
-              <h4 class="title align-center">Privacy</h4>
-              <p>
-                [DIMA PLEASE CHECK] From the onset, privacy and ethics standards
-                were critical to this data collection effort. Each partner was
-                responsible for developing a policy. While specifics vary per
-                site, common guidelines have been followed. Please refer to our
-                statement by members of the consortium on issues of privacy and
-                ethics for further details. Should any researcher, participant
-                or data user encounter clips they have been insufficiently
-                redacted, or for any other privacy concerns, please contact us
-                immediately at privacy@ego4d-data.org.
-              </p>
-            </div>
-          </div>
+
+        <!-- Left and right controls -->
+        <div id="carousel-controls">
+          <a href="#carousel" data-slide="prev">
+            <span id="left-control" class="carousel-control" aria-hidden="true"
+              >&larr;</span
+            >
+            <span class="sr-only">Previous</span>
+          </a>
+          <a href="#carousel" data-slide="next">
+            <span id="right-control" class="carousel-control" aria-hidden="true"
+              >&rarr;</span
+            >
+            <span class="sr-only">Next</span>
+          </a>
         </div>
+      </div>
+      <div
+        class="container"
+        style="max-width: 1600px !important; margin: 5rem auto"
+      >
         <div class="row">
+          <div class="col-xs-12 align-center">
+            <h3 class="title">SCENARIOS</h3>
+          </div>
           <div class="col-xs-12">
             <img
               class="img-responsive"
-              src="assets/images/egoexo-scenarios.png"
+              src="assets/images/scenarios.jpg"
+              loading="lazy"
+              width="918"
+              height="720"
             />
           </div>
         </div>
@@ -283,13 +373,15 @@
           </div>
         </div>
         <div class="row card-row">
-          <div class="col-xs-12 col-sm-6 col-lg-3 card-block">
+          <div class="col-xs-12 col-sm-6 card-block">
             <a href="#challenges" class="block">
               <div class="card-content h-100">
                 <div class="card-image">
                   <img
                     src="assets/images/keystep_recognition.png"
                     alt="Placeholder image 5"
+                    loading="lazy"
+                    height="100%"
                   />
                 </div>
                 <div class="card-info">
@@ -298,13 +390,15 @@
               </div></a
             >
           </div>
-          <div class="col-xs-12 col-sm-6 col-lg-3 card-block">
+          <div class="col-xs-12 col-sm-6 card-block">
             <a href="#challenges" class="block">
               <div class="card-content h-100">
                 <div class="card-image">
                   <img
                     src="assets/images/demonstration.png"
                     alt="Placeholder image 3"
+                    loading="lazy"
+                    height="100%"
                   />
                 </div>
                 <div class="card-info">
@@ -314,13 +408,15 @@
             </a>
           </div>
 
-          <div class="col-xs-12 col-sm-6 col-lg-3 card-block">
+          <div class="col-xs-12 col-sm-6 card-block">
             <a href="#challenges" class="block">
               <div class="card-content h-100">
                 <div class="card-image">
                   <img
                     src="assets/images/relation.png"
                     alt="Placeholder image 6"
+                    loading="lazy"
+                    height="100%"
                   />
                 </div>
                 <div class="card-info">
@@ -329,13 +425,15 @@
               </div></a
             >
           </div>
-          <div class="col-xs-12 col-sm-6 col-lg-3 card-block">
+          <div class="col-xs-12 col-sm-6 card-block">
             <a href="#challenges" class="block">
               <div class="card-content h-100">
                 <div class="card-image">
                   <img
                     src="assets/images/pose_estimation.png"
                     alt="Placeholder image 7"
+                    loading="lazy"
+                    height="100%"
                   />
                 </div>
                 <div class="card-info">
@@ -348,7 +446,7 @@
       </div>
     </section>
     <section id="qa">
-      <div class="container">
+      <div class="container-fluid">
         <div class="row">
           <div class="col-xs-12 align-center">
             <h3 class="title large-text">QUESTIONS / ANSWERS</h3>
@@ -379,7 +477,10 @@
                   >
                 </p>
                 <a href="https://arxiv.org/abs/2110.07058" target="_blank">
-                  <img src="./assets/images/paperOverview.png" width="100%"
+                  <img
+                    src="./assets/images/paperOverview.png"
+                    loading="lazy"
+                    width="100%"
                 /></a>
                 <!-- <pre class="bibtex"><code>@ARTICLE{EGO4D2021,
    title={Ego4D: Around the World in 3K Hours of Egocentric Video},
@@ -482,6 +583,7 @@
                     src="assets/images/demographics.png"
                     alt="EGO4D Demographics"
                     title="EGO4D Demographics"
+                    loading="lazy"
                     width="100%"
                   />
                 </div>
@@ -538,6 +640,8 @@
                     src="assets/images/Scenarios.jpg"
                     alt="EGO4D Scenarios"
                     title="EGO4D Scenarios"
+                    width="100%"
+                    loading="lazy"
                     width="100%"
                   />
                 </div>
@@ -615,7 +719,7 @@
       </div>
     </section>
     <section id="people">
-      <div class="container" style="max-width: 1600px !important">
+      <div class="container-fluid" style="max-width: 1600px !important">
         <div class="row">
           <div class="title-block align-center">
             <h3 class="title large-text">EGO4D Team</h3>
@@ -635,6 +739,7 @@
                       class="people_card__image"
                       src="assets/images/teams/cmu-wordmark-stacked-r.png"
                       alt="Logo of Carnegie Mellon University"
+                      loading="lazy"
                   /></a>
                   <p class="people_card__location">
                     <span
@@ -734,6 +839,7 @@
                     class="people_card__image"
                     src="assets/images/teams/cmu-africa.png"
                     alt="Logo of CMU Africa"
+                    loading="lazy"
                   />
 
                   <p class="people_card__location">
@@ -769,6 +875,7 @@
                       class="people_card__image"
                       src="assets/images/teams/kaust.png"
                       alt="Logo of King Abdullah University of Science and Technology"
+                      loading="lazy"
                   /></a>
                   <p class="people_card__location">
                     <span
@@ -858,6 +965,7 @@
                     class="people_card__image"
                     src="assets/images/teams/umn.png"
                     alt="Logo of University of Minnesota"
+                    loading="lazy"
                   />
                   <p class="people_card__location">
                     <span
@@ -886,6 +994,7 @@
                       class="people_card__image"
                       src="assets/images/teams/iiith.png"
                       alt="Logo of IIIT Hyderabad"
+                      loading="lazy"
                   /></a>
                   <p class="people_card__location">
                     <span
@@ -924,6 +1033,7 @@
                     class="people_card__image"
                     src="assets/images/teams/iub.png"
                     alt="Logo of Indiana University"
+                    loading="lazy"
                   />
                   <p class="people_card__location">
                     <span
@@ -935,6 +1045,27 @@
                     <li>David Crandall (PI)</li>
                     <li>Yuchen Wang</li>
                     <li>Weslie Khoo</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="row row-no-gutters">
+              <!-- UNC -->
+              <div class="col-xs-12">
+                <div class="people_card">
+                  <img
+                    class="people_card__image"
+                    src="assets/images/teams/UNC.png"
+                    alt="Logo of University of North Carolina at Chapel Hill"
+                    loading="lazy"
+                  />
+                  <p class="people_card__location">
+                    <span><i class="fas fa-map-marker-alt"></i> U.S.</span>
+                  </p>
+
+                  <ul class="people_card__list">
+                    <li>TODO</li>
+                    <li>TODO</li>
                   </ul>
                 </div>
               </div>
@@ -955,6 +1086,7 @@
                       class="people_card__image"
                       src="assets/images/teams/unict.png"
                       alt="Logo of  University of Catania"
+                      loading="lazy"
                   /></a>
                   <p class="people_card__location">
                     <span><i class="fas fa-map-marker-alt"></i> Italy</span>
@@ -1012,6 +1144,7 @@
                       class="people_card__image"
                       src="assets/images/teams/uoftokyo.png"
                       alt="Logo of University of Tokyo"
+                      loading="lazy"
                   /></a>
                   <p class="people_card__location">
                     <span><i class="fas fa-map-marker-alt"></i> Japan</span>
@@ -1071,6 +1204,7 @@
                       class="people_card__image"
                       src="assets/images/teams/uob.png"
                       alt="Logo of University of Bristol"
+                      loading="lazy"
                   /></a>
                   <p class="people_card__location">
                     <span><i class="fas fa-map-marker-alt"></i> UK</span>
@@ -1145,6 +1279,7 @@
                     class="people_card__image"
                     src="assets/images/teams/nus.jpeg"
                     alt="Logo of National University of Singapore"
+                    loading="lazy"
                   />
                   <p class="people_card__location">
                     <span><i class="fas fa-map-marker-alt"></i> Singapore</span>
@@ -1175,6 +1310,7 @@
                     class="people_card__image"
                     src="assets/images/teams/gatech.png"
                     alt="Logo of Georgia Institute of Technology"
+                    loading="lazy"
                   />
                   <p class="people_card__location">
                     <span><i class="fas fa-map-marker-alt"></i> U.S.</span>
@@ -1244,6 +1380,7 @@
                     class="people_card__image"
                     src="assets/images/teams/upenn.png"
                     alt="Logo of University of Pennsylvania"
+                    loading="lazy"
                   />
                   <p class="people_card__location">
                     <span><i class="fas fa-map-marker-alt"></i> U.S.</span>
@@ -1271,6 +1408,7 @@
                       class="people_card__image"
                       src="assets/images/teams/uniandes.jpeg"
                       alt="Logo of Universidad de los Andes"
+                      loading="lazy"
                   /></a>
                   <p class="people_card__location">
                     <span
@@ -1327,26 +1465,7 @@
                 </div>
               </div>
             </div>
-            <div class="row row-no-gutters">
-              <!-- UNC -->
-              <div class="col-xs-12">
-                <div class="people_card">
-                  <img
-                    class="people_card__image"
-                    src="assets/images/teams/UNC.png"
-                    alt="Logo of University of North Carolina at Chapel Hill"
-                  />
-                  <p class="people_card__location">
-                    <span><i class="fas fa-map-marker-alt"></i> U.S.</span>
-                  </p>
 
-                  <ul class="people_card__list">
-                    <li>TODO</li>
-                    <li>TODO</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
             <div class="row row-no-gutters">
               <!-- SFU -->
               <div class="col-xs-12">
@@ -1355,6 +1474,7 @@
                     class="people_card__image"
                     src="assets/images/teams/SFU.png"
                     alt="Logo of Simon Fraser University"
+                    loading="lazy"
                   />
                   <p class="people_card__location">
                     <span><i class="fas fa-map-marker-alt"></i> Canada</span>
@@ -1375,6 +1495,7 @@
                     class="people_card__image"
                     src="assets/images/teams/fair.png"
                     alt="Logo of FAIR"
+                    loading="lazy"
                   />
                   <p class="people_card__location">
                     <span
@@ -1531,7 +1652,7 @@
       </div>
     </section>
     <section id="download">
-      <div class="container">
+      <div class="container-fluid">
         <div class="row align-items-center">
           <div
             class="col-md-offset-2 col-lg-offset-3 col-lg-3 col-md-4 col-xs-12"
@@ -1599,7 +1720,7 @@
       </div>
     </section>
     <section id="Contact">
-      <div class="container">
+      <div class="container-fluid">
         <div class="row align-items-center">
           <div
             class="col-md-offset-2 col-lg-offset-3 col-lg-3 col-md-4 col-xs-12"
