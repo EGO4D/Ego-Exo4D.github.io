@@ -519,6 +519,14 @@ a.btn-translucent {
   position: relative;
   background-color: transparent;
 }
+#scenario_selector {
+  display: inline-flex;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1em;
+}
 
 #parallax-tooltip {
   position: fixed;
@@ -555,7 +563,7 @@ a.btn-translucent {
   position: absolute;
   left: 0;
   right: 0;
-  top: 65vh;
+  top: 70vh;
   bottom: 0;
   font-size: min(2em, max(0.75em, 2vmin));
   background: linear-gradient(
@@ -585,11 +593,11 @@ a.btn-translucent {
 .parallax-description > .row {
   flex: 0 0 auto;
 }
-#parallax-image .btn-primary {
+.parallax-description .btn-primary {
   background-color: #7030a0;
   color: white;
 }
-#parallax-image .btn {
+.parallax-description .btn {
   font-size: min(1.5em, max(0.75em, 2vmin));
   padding: 0.75em 0.75em;
   margin: 0.5em -4px 0 16px;

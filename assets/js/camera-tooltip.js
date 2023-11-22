@@ -21,7 +21,7 @@ function shuffle(max) {
   return arr;
 }
 
-function camera_hover(tooltip, video, parallax) {
+function camera_hover(tooltip, video, parallax, scenario_selector) {
   if (!window || !window.innerWidth || !window.innerHeight) {
     return;
   }
@@ -35,6 +35,26 @@ function camera_hover(tooltip, video, parallax) {
   let mx, my, Mx, My, markers;
   let currentMarker = null;
   let currentScenario = "cooking";
+  if (scenario_selector) {
+    const scenario_option = scenario_selector.querySelector("#scenario");
+    const scenario_dropdown = scenario_selector.querySelector(
+      "#scenario_dropdown_list"
+    );
+    scenario_dropdown.onclick = (e) => {
+      if (!e.target.matches("li > a[data-scenario]")) {
+        return;
+      }
+      const selected_scenario = e.target.dataset.scenario;
+      if (selected_scenario === currentScenario) {
+        return;
+      }
+      currentScenario = selected_scenario;
+      parallax.style.background = `black url("assets/images/scenarios/${currentScenario}.png") 50% 50% / cover no-repeat border-box fixed`;
+      disable();
+      enable();
+      scenario_option.textContent = e.target.textContent;
+    };
+  }
   let currentTime = 0;
 
   video.oncanplay = () => {
@@ -54,7 +74,7 @@ function camera_hover(tooltip, video, parallax) {
 
   // WARNING: Assuming BOUNDS is defined
   let dom_markers = Object.fromEntries(
-    Object.entries(BOUNDS).map(([k, v]) => {
+    Object.entries(BOUNDS[currentScenario]).map(([k, v]) => {
       const [x1, y1, x2, y2] = v;
       return [k, [...img2dom(x1, y1), ...img2dom(x2, y2)]];
     })
@@ -69,6 +89,7 @@ function camera_hover(tooltip, video, parallax) {
       return true;
     });
   };
+
   const onmousemove = (e) => {
     const [x, y] = [e.clientX, e.clientY];
     if (x < mx || x > Mx || y < my || y > My) {
@@ -109,7 +130,7 @@ function camera_hover(tooltip, video, parallax) {
     const top = (y1 + y2) / 2;
 
     tooltip.style.top = `${Math.round(
-      Math.min(Math.max(8, ph * 0.6 - VW - 8), Math.max(8, top - VW / 2))
+      Math.min(Math.max(8, ph * 0.7 - VW - 8), Math.max(8, top - VW / 2))
     )}px`;
     tooltip.style.bottom = `auto`;
 
@@ -118,7 +139,6 @@ function camera_hover(tooltip, video, parallax) {
     currentTime = video.currentTime;
 
     video.src = `${ASSET_URL}/${currentScenario}/${currentMarker}.mp4`;
-    video.muted = false;
     video.currentTime = currentTime;
     video.load();
 
@@ -139,7 +159,7 @@ function camera_hover(tooltip, video, parallax) {
       iscale = pw / w;
     }
     dom_markers = Object.fromEntries(
-      Object.entries(BOUNDS).map(([k, v]) => {
+      Object.entries(BOUNDS[currentScenario]).map(([k, v]) => {
         const [x1, y1, x2, y2] = v;
         return [k, [...img2dom(x1, y1), ...img2dom(x2, y2)]];
       })
@@ -187,6 +207,7 @@ function camera_hover(tooltip, video, parallax) {
     video.src = "";
     video.load();
     currentMarker = null;
+    currentTime = 0;
     enabled = false;
   };
   const enable = () => {
