@@ -588,7 +588,7 @@ a.btn-translucent {
 }
 
 #parallax-image img {
-  height: 8vh;
+  height: 12vh;
 }
 .parallax-description {
   height: 100%;
@@ -1009,6 +1009,98 @@ footer {
   margin-bottom: 0.5em;
 }
 
+/* Scenario card */
+.scenario_card {
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  border: 1px solid #ececec;
+  border-radius: 1rem;
+  overflow: hidden;
+  margin: 0.5em 0 1em 0;
+}
+.scenario_card__image {
+  flex: 0 0 128px;
+  align-self: center;
+  padding: 2em;
+  background-color: white;
+  text-align: center;
+}
+.scenario_card__total {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  font-size: 1.25em;
+}
+
+.scenario_card__total > div {
+  margin-bottom: 1em;
+}
+.scenario_card__total__item {
+  margin: 0 1em;
+}
+.scenario_card__total__item > * {
+  margin: 0 0.25em;
+}
+.scenario_card__total__subtext {
+  margin-top: 0.25em;
+  font-size: 0.8em;
+  text-align: center;
+  color: #9752cb;
+}
+.scenario_card__description {
+  flex: 1;
+  padding: 2em;
+  background-color: #ffffff;
+  position: relative;
+}
+.scenario_card__description::before {
+  background-color: #9752cb;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.1;
+}
+.scenario_card__icon {
+  max-height: 120px;
+  max-width: 100%;
+  width: auto;
+  height: 100%;
+  margin-bottom: 2em;
+}
+.scenario_card__caption {
+  font-size: 1em;
+}
+
+.scenario_card__caption:first-child {
+  font-size: 2em;
+}
+.scenario_card__item {
+  margin-bottom: 0.75em;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  font-size: 1.25em;
+}
+.scenario_card__item > * {
+  min-width: 32px;
+}
+.scenario_card__item > i {
+  text-align: center;
+}
+.scenario_card__item__subtext {
+  font-size: 0.8em;
+  margin-left: 0.5em;
+  color: #9752cb;
+}
+
+.scenario_card__item:last-child {
+  margin-bottom: 0;
+}
+
 /* People and team card */
 .people_card {
   border: 1px solid #ececec;
@@ -1189,6 +1281,9 @@ footer {
 
   .slide {
     flex-wrap: nowrap;
+  }
+  .scenario_card__total {
+    font-size: 2em;
   }
 }
 
