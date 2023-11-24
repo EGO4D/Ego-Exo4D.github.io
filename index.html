@@ -109,8 +109,8 @@
             <div class="parallax-description">
               <img src="assets/images/ego-exo4d-logo.png" alt="Logo" />
               <p>
-                A <b>multi-modal</b>, <b>multi-view</b>, massive-scale videos
-                dataset collected across 13 cities worldwide by 839 camera
+                A <b>diverse</b>, large-scale <b>multi-modal</b>, <b>multi-view</b>, video
+                dataset and benchmark collected across 13 cities worldwide by 839 camera
                 wearers, capturing <b>1422 hours</b> of video of skilled human
                 activities.
               </p>
@@ -234,13 +234,13 @@
               >
                 <h2 class="title">Vision + Language</h2>
                 <p class="slide-text">
-                  Ego-Exo4D presents three meticulously synchronized natural language datasets paired with videos. The first dataset features expert commentary, revealing nuanced skills. The second includes participant-provided narrate-and-act descriptions in a tutorial style. The third consists of concise, one-sentence atomic action descriptions. These annotations are designed to be versatile, free from strict benchmarks, making them a flexible resource. They support diverse applications, including browsing, mining the dataset, and addressing challenges in video-language learning, such as understanding action-object relationships, self-supervised representation learning, video-conditioned language models, and skill assessment.
+                  Ego-Exo4D presents three meticulously synchronized natural language datasets paired with videos. (1) expert commentary, revealing nuanced skills. (2) participant-provided narrate-and-act descriptions in a tutorial style. (3) one-sentence atomic action descriptions to support browsing, mining the dataset, and addressing challenges in video-language learning.
                 </p>
               </div>
               <div class="col-xs-12 col-md-7 col-lg-7 slide-image-wrap">
                 <img
                   class="img-responsive slide-image"
-                  src="assets/images/vision_language.png"
+                  src="assets/images/language2.png"
                   alt="Placeholder image 3"
                 />
               </div>
@@ -254,7 +254,7 @@
               >
                 <h2 class="title">Multi-view</h2>
                 <p class="slide-text">
-                  Our goal is to capture simultaneous ego and exo video, together with multiple egocentric sensing modalities. Our camera configuration features Aria glasses for ego capture, including an 8 MP RGB camera and two SLAM cameras. The ego camera is calibrated and time-synchronized with four to five (stationary) GoPros placed on tripods as the exo capture devices, allowing 3D reconstruction of the environment point clouds and the participant’s body pose. The number and placement of the exocentric cameras is determined per scenario in order to allow maximal coverage of useful viewpoints without obstructing the participants’ activity.
+                  Our goal is to capture simultaneous ego and multiple exo videos, together with multiple egocentric sensing modalities. Our camera configuration features Aria glasses for ego capture, including an 8 MP RGB camera and two SLAM cameras. The ego camera is calibrated and time-synchronized with 4-5 (stationary) GoPros as the exo capture devices. The number and placement of the exocentric cameras is determined per scenario in order to allow maximal coverage of useful viewpoints without obstructing the participants’ activity.
                 </p>
               </div>
               <div class="col-xs-12 col-md-7 col-lg-7 slide-image-wrap">
@@ -274,11 +274,8 @@
               >
                 <h2 class="title">Multi-modal</h2>
                 <p class="slide-text">
-                  Apart from multiple views, we also capture multiple modalities. For example, from Aria we get:
+                    Apart from multiple views, we also capture multiple modalities:</p>
                   <ul class="slide-text">
-                    <li>- One rolling-shutter RGB camera</li>
-                    <li>- Two global-shutter monochrome cameras</li>
-                    <li>- Two monochrome eye-tracking cameras</li>
                     <li>- An array of seven microphones</li>
                     <li>- Two IMUs (800 Hz and 1000 Hz respectively), a barometer (50 fps) and a magnetometer (10 fps).</li>
                     And from Aria Machine Perception Services (MPS) we get:
@@ -289,7 +286,6 @@
                       <li>- GoPro 6 DoF Localization</li>
                     </ul>
                   </ul>
-                </p>
               </div>
               <div class="col-xs-12 col-md-7 col-lg-7 slide-image-wrap">
                 <img
@@ -306,23 +302,18 @@
               <div
                 class="col-xs-12 col-md-4 col-lg-4 col-md-offset-1 col-lg-offset-1 slide-content"
               >
-                <h2 class="title">PRIVACY/ETHICS</h2>
+                <h2 class="title">Ethics</h2>
                 <p class="slide-text">
-                  Ego-Exo4D was collected following rigorous privacy and ethics standards. This included undergoing formal independent review processes at each institution to establish the standards for collection, management, and informed consent. Similarly, all Ego-Exo4D data collection adhered to the Project <a href=https://www.projectaria.com/community-guidelines/>Aria Research Community Guidelines</a> for responsible research. Since the scenarios allow for closed environments (e.g., no passerbys) nearly all video is available without de-identification.
-
-                  <br>Should any researcher, participant or data user encounter
-                  clips they have been insufficiently redacted, or for any other
-                  privacy concerns, please contact us immediately at
-                  <a href="mailto:privacy@ego4d-data.org"
-                    >privacy@ego4d-data.org</a
+                  Ego-Exo4D videos are recorded with rigorous privacy and ethics policies and formal consent of participantswas. Since the scenarios allow for closed environments (e.g., no passerbys) nearly all video is available without de-identification. All Ego-Exo4D data collection adhered to the Project <a href="https://www.projectaria.com/community-guidelines">Aria Research Community Guidelines</a> for responsible research. </p>
+                  <br>For any concerns, contact us at
+                  <a href="mailto:privacy@ego4d-data.org">privacy@ego4d-data.org</a
                   >.
-                </p>
               </div>
               <div class="col-xs-12 col-md-7 col-lg-7 slide-image-wrap">
                 <img
                   class="img-responsive slide-image"
-                  src="assets/images/anony.jpg"
-                  alt="Placeholder image 3"
+                  src="assets/images/Closed.png"
+                  alt="Recordings are in closed environments"
                 />
               </div>
             </div>
@@ -783,12 +774,12 @@
             >
               <div class="timeline-text-content">
                 <h4 class="small-title">
-                  What to cite referencing this effort?
+                 <!-- What to cite referencing this effort? -->
+                    Where can I find additional information?
                 </h4>
                 <p>
-                  If using the dataset, annotations or inspiration from this
-                  work,
-                  Coming soon!
+                  We will be releasing a paper on ArXiv soon. Stay tuned for a detailed 70+ pages report describing the effort.
+                  ArXiv and citation coming soon.
                 </p>
                 <!-- <a href="https://arxiv.org/abs/2110.07058" target="_blank">
                   <img
@@ -826,19 +817,20 @@
               <div class="timeline-text-content">
                 <h4 class="small-title">How can I download the dataset?</h4>
                 <p>
-                  Coming soon!
+                  The dataset will be released before the end of December 2023. Please refer to this webpage where all information on download will be available. License forms should be signed to access videos, metadata and annotations. These will also be available for reviewing and signing from this webpage.
                 </p>
               </div>
             </div>
           </div>
+            
           <div class="row timeline-element divider-line">
             <div
               class="col-lg-6 col-md-6 col-xs-11 col-xs-offset-1 col-md-offset-0 col-lg-offset-0"
             >
               <div class="timeline-text-content">
-                <h4 class="small-title">What MetaData is available?</h4>
+                <h4 class="small-title">I have already downloaded and signed Ego4D licenses before. Do I need to sign again?</h4>
                 <p>
-                  Coming soon!
+                  Yes. As new university partners are part of this effort, a new license should be signed.
                 </p>
               </div>
             </div>
@@ -880,20 +872,10 @@
                   Does the data contain identifying information of individuals?
                 </h4>
                 <p>
-                  The collecting partner holds consent forms and/or release
-                  forms for all videos. Only when consent has been collected
-                  from participants, the data will contain faces and other
-                  identifying information. For the majority of videos, data has
-                  been de-identified pre-release. Refer to our
-                  <a
-                    href="./pdfs/Ego4D-Privacy-and-ethics-consortium-statement.pdf"
-                    >privacy statement</a
-                  >
-                  and
-                  <a href="https://arxiv.org/abs/2110.07058" target="_blank"
-                    >ArXiv (Sec 3.4 and appendix C)
-                  </a>
-                  for details of our privacy and de-identification pipeline.
+                  Yes. Since the scenarios allow for closed en303
+vironments (e.g., no passerbys) nearly all video is available
+without de-identification. Refer to our upcoming ArXiv
+                  for details of our privacy and data collection pipeline.
                 </p>
               </div>
             </div>
@@ -932,10 +914,10 @@
             >
               <div class="timeline-text-content">
                 <h4 class="small-title">
-                  Do you offer pre-extracted features?
+                  What metadata, features and models are available with the dataset?
                 </h4>
                 <p>
-                  Coming soon?
+                  We will be releasing additional information with the dataset before the end of the year
                 </p>
               </div>
             </div>
@@ -948,11 +930,13 @@
             >
               <div class="timeline-text-content">
                 <h4 class="small-title">
-                  What equipment, resolution and frame rate are available?
+                  How does this dataset differ from Ego4D?
                 </h4>
                 <p>
-                  Coming Soon!
+                  Ego4D collected unscripted daily life activities. Instead, we here focus on skilled activities specifically, ensuring participaints of diverse levels of skill are recorded performing the same scenario, while maintaining distinctions natural to the scenario being carried out in a new environment. We cover both procedural and physical skilled activities. While some of these general scenarios have been captured in Ego4D (there are indeed examples of cooking, climbing or soccer), these are disjoint and do not record the same scenario making them unsuitable for tasks related to to keystep recognition or skill assessment.
                 </p>
+                  <p>Importantly, Ego-Exo4D is a multi-view dataset with synchronised egocentric and multiple exocentric view. This is the largest and most diverse effort for multi-view ego-exo data.</p>
+                  <p>The egocentric views are captured using the Aria Project devices.</p>
               </div>
             </div>
           </div>
@@ -962,10 +946,10 @@
             >
               <div class="timeline-text-content">
                 <h4 class="small-title">
-                  How can I participate in the benchmarks?
+                  Will there be challenges and benchmarks associcated with this dataset?
                 </h4>
                 <p>
-                  Coming Soon!
+                  Yes! Please stay tuned,
                 </p>
               </div>
             </div>
@@ -1498,27 +1482,18 @@
                       ></a>
                     </li>
                     <li>
-                      Will Price
+                      Siddhant Bansal
                       <a
-                        href="https://www.willprice.dev/research/"
+                        href="https://sid2697.github.io"
                         target="_blank"
                         rel="noopener noreferrer"
                         ><i class="fas fa-link"></i
                       ></a>
                     </li>
                     <li>
-                      Jonathan Munro
+                      Zhifan Zhu
                       <a
-                        href="https://jonmun.github.io/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        ><i class="fas fa-link"></i
-                      ></a>
-                    </li>
-                    <li>
-                      Adriano Fragomeni
-                      <a
-                        href="https://adrianofragomeni.github.io/"
+                        href="https://zhifanzhu.github.io"
                         target="_blank"
                         rel="noopener noreferrer"
                         ><i class="fas fa-link"></i
@@ -1890,20 +1865,6 @@
                 </div>
               </div>
             </div>
-            <div class="row row-no-gutters">
-              <!-- Others -->
-              <div class="col-xs-12">
-                <div class="people_card">
-                  <p class="people_card__icon">
-                    <i class="fas fa-globe fa-lg"></i>
-                  </p>
-
-                  <ul class="people_card__list">
-                    <li>Ilija Radosavovic, UC Berkeley</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -1919,11 +1880,11 @@
           <div class="col-lg-3 col-md-4 col-xs-12 voffset-16">
             <p>
               <b
-                >The dataset will be released soon</b
+                >The dataset will be available for download before the end of December 2023</b
               ><br /><br />
               License forms should be signed to access videos, metadata and
               annotations. <br />
-              <a
+            <!--  <a
                 class="btn btn-primary btn-translucent"
                 role="button"
                 target="_blank"
@@ -1941,7 +1902,7 @@
                 href="https://ego4d-data.org/docs/start-here/"
               >
                 Start Here &nearr;
-              </a>
+              </a>-->
               <!--       Enter your email. You will
               receive instructions shortly.-->
             </p>
