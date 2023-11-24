@@ -92,7 +92,7 @@ header {
 
 #logo {
   margin: 0 12px;
-  height: 4.3rem;
+  height: 8rem;
 }
 
 .navbar-toggler {
@@ -285,7 +285,6 @@ a.btn-translucent {
 
 #carousel {
   position: relative;
-  padding-top: 5rem;
   padding-bottom: 5rem;
   background-color: white;
 }
@@ -587,9 +586,6 @@ a.btn-translucent {
     border-box;
 }
 
-#parallax-image img {
-  height: 12vh;
-}
 .parallax-description {
   height: 100%;
   display: flex;
@@ -606,6 +602,23 @@ a.btn-translucent {
 .parallax-description > .row {
   flex: 0 0 auto;
 }
+.parallax-logo {
+  width: 100%;
+  display: flex;
+  min-height: 0;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+.parallax-logo > img {
+  height: 12vh;
+}
+.parallax-logo > p {
+  align-self: flex-end;
+  margin-left: auto;
+  font-size: 14px;
+  font-style: italic;
+  color: #9752cb;
+}
 .parallax-description .btn-primary {
   background-color: #7030a0;
   color: white;
@@ -617,7 +630,7 @@ a.btn-translucent {
 }
 @media screen and (min-width: 1025px) and (min-height: 512px) {
   #parallax-image {
-    background: black url("../images/cooking-pointcloud.jpg") 50% 50% / cover
+    background: black url("../images/scenarios/cooking.jpg") 50% 50% / cover
       no-repeat border-box fixed;
   }
   #parallax-image::before {
@@ -1290,7 +1303,7 @@ footer {
 @media (max-width: 991px) {
   .slide-content {
     padding-top: 0;
-    margin-bottom: 72px;
+    margin-bottom: 48px;
   }
 
   #nav-bar {

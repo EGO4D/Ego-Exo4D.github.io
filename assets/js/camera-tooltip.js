@@ -25,9 +25,9 @@ function camera_hover(tooltip, video, parallax, scenario_selector) {
   if (!window || !window.innerWidth || !window.innerHeight) {
     return;
   }
-  // Disable map hover if bbox falls outside.
-  const cover_video = parallax.querySelector("#cover-video");
+  const cover_video = parallax.querySelector("#cover-video > video");
 
+  // Disable map hover if bbox falls outside.
   let pw = window.innerWidth,
     ph = window.innerHeight;
   let iw = w,
@@ -148,6 +148,7 @@ function camera_hover(tooltip, video, parallax, scenario_selector) {
   };
   let user_disabled = false;
 
+  let enabled = false;
   const calculateImageDims = () => {
     let par = pw / ph;
     if (par < ar) {
@@ -170,8 +171,14 @@ function camera_hover(tooltip, video, parallax, scenario_selector) {
     markers = { ...dom_markers };
     delete markers["bbox"];
     if (ph < 512 || pw < 1024) {
+      if (cover_video) {
+        if (enabled) {
+          cover_video.play();
+        } else {
+          cover_video.pause();
+        }
+      }
       parallax.style.background = null;
-      cover_video.classList.remove("gone");
       scenario_selector.classList.add("gone");
       parallax.onmousemove = null;
       parallax.onclick = (e) => {
@@ -183,8 +190,10 @@ function camera_hover(tooltip, video, parallax, scenario_selector) {
       };
       return;
     }
+    if (cover_video) {
+      cover_video.pause();
+    }
     parallax.style.background = `black url("assets/images/scenarios/${currentScenario}.jpg") 50% 50% / cover no-repeat border-box fixed`;
-    cover_video.classList.add("gone");
     scenario_selector.classList.remove("gone");
     parallax.onmousemove = onmousemove;
     parallax.onclick = null;
@@ -200,7 +209,6 @@ function camera_hover(tooltip, video, parallax, scenario_selector) {
     calculateImageDims();
   };
 
-  let enabled = false;
   const disable = () => {
     if (!enabled) {
       return;
@@ -216,6 +224,7 @@ function camera_hover(tooltip, video, parallax, scenario_selector) {
     currentMarker = null;
     currentTime = 0;
     enabled = false;
+    resizeListener();
   };
   const enable = () => {
     if (enabled) {
@@ -224,9 +233,10 @@ function camera_hover(tooltip, video, parallax, scenario_selector) {
     if (!user_disabled) {
       parallax.classList.remove("paused");
     }
+
     window.addEventListener("resize", resizeListener, false);
-    resizeListener();
     enabled = true;
+    resizeListener();
   };
 
   return [enable, disable];
