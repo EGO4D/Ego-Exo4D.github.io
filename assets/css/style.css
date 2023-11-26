@@ -1088,6 +1088,12 @@ footer {
   font-size: 1em;
 }
 
+.center-bold {
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px; /* Adjust size as needed */
+}
+
 .scenario_card__caption:first-child {
   font-size: 2em;
 }
