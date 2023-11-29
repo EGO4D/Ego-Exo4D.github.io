@@ -26,6 +26,7 @@ function camera_hover(tooltip, video, parallax, scenario_selector) {
     return;
   }
   const cover_video = parallax.querySelector("#cover-video > video");
+  let cover_video_src = cover_video.querySelector("source");
 
   // Disable map hover if bbox falls outside.
   let pw = window.innerWidth,
@@ -171,6 +172,12 @@ function camera_hover(tooltip, video, parallax, scenario_selector) {
     markers = { ...dom_markers };
     delete markers["bbox"];
     if (ph < 512 || pw < 1024) {
+      if (cover_video_src) {
+        // Setup the lazy loaded video source
+        cover_video_src.src = cover_video_src.dataset.src;
+        cover_video.load();
+        cover_video_src = null;
+      }
       if (cover_video) {
         if (enabled) {
           cover_video.play();

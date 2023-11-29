@@ -21,11 +21,32 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link rel="preconnect" href="https://assets.ego4d-data.org" />
 
-    <link rel="stylesheet" href="assets/css/style.css" />
-
     <link rel="preload" as="image" href="assets/images/ego-exo4d-logo.png" />
     <link rel="preload" as="image" href="assets/images/scenarios/cooking.jpg" />
+    <link
+      rel="preload"
+      href="https://fonts.gstatic.com/s/oswald/v53/TK3_WkUHHAIjg75cFRf3bXL8LICs1_FvsUZiZSSShiA.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-brands-400.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-solid-900.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
     <link rel="icon" href="./assets/images/ego-exo4d-icon.ico" />
+
+    <link rel="stylesheet" href="assets/css/style.css" />
 
     <!-- Latest font-awesome css for icons -->
     <link
@@ -42,9 +63,15 @@
     />
 
     <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+      defer
+    ></script>
     <!-- Latest compiled JavaScript for BS3 -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+      defer
+    ></script>
 
     <!-- scripts to control the hover behaviour on landing page -->
     <script src="./assets/js/camera-bounds.js"></script>
@@ -64,13 +91,17 @@
     <section id="parallax-image">
       <div id="cover-video" class="hidden-1025x512">
         <video
-          src="assets/videos/cooking/pointcloud.mp4"
           autoplay
           muted
           loop
           playsinline
           poster="assets/images/scenarios/cooking.jpg"
-        ></video>
+        >
+          <source
+            data-src="assets/videos/cooking/pointcloud.mp4"
+            type="video/mp4"
+          />
+        </video>
       </div>
       <div id="scenario_selector" class="gone">
         <span style="color: white">Scenario: &emsp;</span>
@@ -109,13 +140,16 @@
             <div class="parallax-description">
               <div class="parallax-logo">
                 <img src="assets/images/ego-exo4d-logo.png" alt="Logo" />
-                <p class="show-1025x512">Hover your mouse over scene cameras above to see a sample video for the chosen scenario.</p>
+                <p class="show-1025x512">
+                  Hover your mouse over scene cameras above to see a sample
+                  video for the chosen scenario.
+                </p>
               </div>
               <p>
-                A <b>diverse</b>, large-scale <b>multi-modal</b>, <b>multi-view</b>, video
-                dataset and benchmark collected across 13 cities worldwide by 839 camera
-                wearers, capturing <b>1422 hours</b> of video of skilled human
-                activities.
+                A <b>diverse</b>, large-scale <b>multi-modal</b>,
+                <b>multi-view</b>, video dataset and benchmark collected across
+                13 cities worldwide by 839 camera wearers, capturing
+                <b>1422 hours</b> of video of skilled human activities.
               </p>
 
               <div class="row">
@@ -126,7 +160,13 @@
                 >
                   Learn More&emsp;&darr;
                 </a>
-                <a class="btn btn-default" href="https://youtu.be/GdooXEBAnI8" target="_blank" role="button" rel="noopener noreferrer">
+                <a
+                  class="btn btn-default"
+                  href="https://youtu.be/GdooXEBAnI8"
+                  target="_blank"
+                  role="button"
+                  rel="noopener noreferrer"
+                >
                   Watch Video ↗
                 </a>
               </div>
@@ -240,7 +280,13 @@
               >
                 <h2 class="title">Vision + Language</h2>
                 <p class="slide-text">
-                  Ego-Exo4D presents three meticulously synchronized natural language datasets paired with videos. (1) expert commentary, revealing nuanced skills. (2) participant-provided narrate-and-act descriptions in a tutorial style. (3) one-sentence atomic action descriptions to support browsing, mining the dataset, and addressing challenges in video-language learning.
+                  Ego-Exo4D presents three meticulously synchronized natural
+                  language datasets paired with videos. (1) expert commentary,
+                  revealing nuanced skills. (2) participant-provided
+                  narrate-and-act descriptions in a tutorial style. (3)
+                  one-sentence atomic action descriptions to support browsing,
+                  mining the dataset, and addressing challenges in
+                  video-language learning.
                 </p>
               </div>
               <div class="col-xs-12 col-md-7 col-lg-7 slide-image-wrap">
@@ -248,6 +294,13 @@
                   class="img-responsive slide-image"
                   src="assets/images/language2.png"
                   alt="Placeholder image 3"
+                  srcset="
+                    assets/images/400w/language2.png   400w,
+                    assets/images/800w/language2.png   800w,
+                    assets/images/1200w/language2.png 1200w,
+                    assets/images/1600w/language2.png 1600w
+                  "
+                  sizes="(max-width: 991px) 100vw, 40vw"
                 />
               </div>
             </div>
@@ -260,7 +313,15 @@
               >
                 <h2 class="title">Multi-view</h2>
                 <p class="slide-text">
-                  Our goal is to capture simultaneous ego and multiple exo videos, together with multiple egocentric sensing modalities. Our camera configuration features Aria glasses for ego capture, including an 8 MP RGB camera and two SLAM cameras. The ego camera is calibrated and time-synchronized with 4-5 (stationary) GoPros as the exo capture devices. The number and placement of the exocentric cameras is determined per scenario in order to allow maximal coverage of useful viewpoints without obstructing the participants’ activity.
+                  Our goal is to capture simultaneous ego and multiple exo
+                  videos, together with multiple egocentric sensing modalities.
+                  Our camera configuration features Aria glasses for ego
+                  capture, including an 8 MP RGB camera and two SLAM cameras.
+                  The ego camera is calibrated and time-synchronized with 4-5
+                  (stationary) GoPros as the exo capture devices. The number and
+                  placement of the exocentric cameras is determined per scenario
+                  in order to allow maximal coverage of useful viewpoints
+                  without obstructing the participants’ activity.
                 </p>
               </div>
               <div class="col-xs-12 col-md-7 col-lg-7 slide-image-wrap">
@@ -268,6 +329,13 @@
                   class="img-responsive slide-image"
                   src="assets/images/ego-exo-view.png"
                   alt="Scenario Distribution in EGO4D"
+                  srcset="
+                    assets/images/400w/ego-exo-view.png   400w,
+                    assets/images/800w/ego-exo-view.png   800w,
+                    assets/images/1200w/ego-exo-view.png 1200w,
+                    assets/images/1600w/ego-exo-view.png 1600w
+                  "
+                  sizes="(max-width: 991px) 100vw, 40vw"
                 />
               </div>
             </div>
@@ -280,24 +348,36 @@
               >
                 <h2 class="title">Multi-modal</h2>
                 <p class="slide-text">
-                    Apart from multiple views, we also capture multiple modalities:</p>
+                  Apart from multiple views, we also capture multiple
+                  modalities:
+                </p>
+                <ul class="slide-text">
+                  <li>- An array of seven microphones</li>
+                  <li>
+                    - Two IMUs (800 Hz and 1000 Hz respectively), a barometer
+                    (50 fps) and a magnetometer (10 fps).
+                  </li>
+                  And from Aria Machine Perception Services (MPS) we get:
                   <ul class="slide-text">
-                    <li>- An array of seven microphones</li>
-                    <li>- Two IMUs (800 Hz and 1000 Hz respectively), a barometer (50 fps) and a magnetometer (10 fps).</li>
-                    And from Aria Machine Perception Services (MPS) we get:
-                    <ul class='slide-text'>
-                      <li>- Aria 6 DoF Localization</li>
-                      <li>- Eye Gaze</li>
-                      <li>- Point Clouds</li>
-                      <li>- GoPro 6 DoF Localization</li>
-                    </ul>
+                    <li>- Aria 6 DoF Localization</li>
+                    <li>- Eye Gaze</li>
+                    <li>- Point Clouds</li>
+                    <li>- GoPro 6 DoF Localization</li>
                   </ul>
+                </ul>
               </div>
               <div class="col-xs-12 col-md-7 col-lg-7 slide-image-wrap">
                 <img
                   class="img-responsive slide-image"
                   src="assets/images/multimodal.png"
                   alt="Scenario Distribution in EGO4D"
+                  srcset="
+                    assets/images/400w/multimodal.png   400w,
+                    assets/images/800w/multimodal.png   800w,
+                    assets/images/1200w/multimodal.png 1200w,
+                    assets/images/1600w/multimodal.png 1600w
+                  "
+                  sizes="(max-width: 991px) 100vw, 40vw"
                 />
               </div>
             </div>
@@ -310,16 +390,33 @@
               >
                 <h2 class="title">Ethics</h2>
                 <p class="slide-text">
-                  Ego-Exo4D videos are recorded with rigorous privacy and ethics policies and formal consent of participants. Since the scenarios allow for closed environments (e.g., no passerby) nearly all video is available without de-identification. All Ego-Exo4D data collection adhered to the Project <a href="https://www.projectaria.com/community-guidelines">Aria Research Community Guidelines</a> for responsible research. </p>
-                  <br>For any concerns, contact us at
-                  <a href="mailto:privacy@ego4d-data.org">privacy@ego4d-data.org</a
-                  >.
+                  Ego-Exo4D videos are recorded with rigorous privacy and ethics
+                  policies and formal consent of participants. Since the
+                  scenarios allow for closed environments (e.g., no passerby)
+                  nearly all video is available without de-identification. All
+                  Ego-Exo4D data collection adhered to the Project
+                  <a href="https://www.projectaria.com/community-guidelines"
+                    >Aria Research Community Guidelines</a
+                  >
+                  for responsible research.
+                </p>
+                <br />For any concerns, contact us at
+                <a href="mailto:privacy@ego4d-data.org"
+                  >privacy@ego4d-data.org</a
+                >.
               </div>
               <div class="col-xs-12 col-md-7 col-lg-7 slide-image-wrap">
                 <img
                   class="img-responsive slide-image"
                   src="assets/images/Closed.png"
                   alt="Recordings are in closed environments"
+                  srcset="
+                    assets/images/400w/Closed.png   400w,
+                    assets/images/800w/Closed.png   800w,
+                    assets/images/1200w/Closed.png 1200w,
+                    assets/images/1600w/Closed.png 1600w
+                  "
+                  sizes="(max-width: 991px) 100vw, 40vw"
                 />
               </div>
             </div>
@@ -399,6 +496,7 @@
                   class="scenario_card__icon"
                   src="assets/images/icon_cooking.png"
                   alt="Cooking icon"
+                  loading="lazy"
                 />
                 <span class="scenario_card__caption">Cooking</span>
               </div>
@@ -435,6 +533,7 @@
                   class="scenario_card__icon"
                   src="assets/images/icon_music.png"
                   alt="Cooking icon"
+                  loading="lazy"
                 />
                 <span class="scenario_card__caption">Music</span>
               </div>
@@ -471,6 +570,7 @@
                   class="scenario_card__icon"
                   src="assets/images/icon_soccer.png"
                   alt="Cooking icon"
+                  loading="lazy"
                 />
                 <span class="scenario_card__caption">Soccer</span>
               </div>
@@ -508,6 +608,7 @@
                   class="scenario_card__icon"
                   src="assets/images/icon_health.png"
                   alt="Cooking icon"
+                  loading="lazy"
                 />
                 <span class="scenario_card__caption">Health</span>
               </div>
@@ -544,6 +645,7 @@
                   class="scenario_card__icon"
                   src="assets/images/icon_basketball.png"
                   alt="Cooking icon"
+                  loading="lazy"
                 />
                 <span class="scenario_card__caption">Basketball</span>
               </div>
@@ -580,6 +682,7 @@
                   class="scenario_card__icon"
                   src="assets/images/icon_dance.png"
                   alt="Cooking icon"
+                  loading="lazy"
                 />
                 <span class="scenario_card__caption">Dance</span>
               </div>
@@ -617,6 +720,7 @@
                   class="scenario_card__icon"
                   src="assets/images/icon_bike_repair.png"
                   alt="Cooking icon"
+                  loading="lazy"
                 />
                 <span class="scenario_card__caption">Bike Repair</span>
               </div>
@@ -653,6 +757,7 @@
                   class="scenario_card__icon"
                   src="assets/images/icon_rock_climbing.png"
                   alt="Cooking icon"
+                  loading="lazy"
                 />
                 <span class="scenario_card__caption">Rock Climbing</span>
               </div>
@@ -686,7 +791,7 @@
     </section>
 
     <section id="challenges">
-      <div class="container-fluid" style="max-width: 1600px;">
+      <div class="container-fluid" style="max-width: 1600px">
         <div class="row card-row">
           <div class="col-xs-12 align-center title">
             <h2 class="title large-text">CHALLENGES</h2>
@@ -780,21 +885,27 @@
             >
               <div class="timeline-text-content">
                 <h4 class="small-title">
-                 <!-- What to cite referencing this effort? -->
-                    Where can I find additional information?
+                  <!-- What to cite referencing this effort? -->
+                  Where can I find additional information?
                 </h4>
-                 <p>
+                <p>
                   For further detailed information refer to our manuscript:<br /><br />
-                     <b>
-                    K Grauman et al. Ego-Exo4D: Understanding Skilled Human Activity from First- and Third-Person Perspectives. <a href=" http://ego-exo4d-data.org/paper/ego-exo4d.pdf">PDF</a> | <a href="http://ego-exo4d-data.org/paper/ego-exo4d-supp.pdf">Supplementary PDF</a></b
+                  <b>
+                    K Grauman et al. Ego-Exo4D: Understanding Skilled Human
+                    Activity from First- and Third-Person Perspectives.
+                    <a href=" http://ego-exo4d-data.org/paper/ego-exo4d.pdf"
+                      >PDF</a
+                    >
+                    |
+                    <a href="http://ego-exo4d-data.org/paper/ego-exo4d-supp.pdf"
+                      >Supplementary PDF</a
+                    ></b
                   >
 
-                     <!--<a href="" target="_blank">cite ArXiv paper</a>-->
-
+                  <!--<a href="" target="_blank">cite ArXiv paper</a>-->
                 </p>
-             <!--   <a href="" target="_blank">
+                <!--   <a href="" target="_blank">
                 <img src="./assets/images/paperOverview.png" width="100%" /></a>-->
-
               </div>
             </div>
             <span class="timeline-point"></span>
@@ -818,7 +929,11 @@
               <div class="timeline-text-content">
                 <h4 class="small-title">How can I download the dataset?</h4>
                 <p>
-                  The dataset will be released before the end of December 2023. Please refer to this webpage where all information on download will be available. License forms should be signed to access videos, metadata and annotations. These will also be available for reviewing and signing from this webpage.
+                  The dataset will be released before the end of December 2023.
+                  Please refer to this webpage where all information on download
+                  will be available. License forms should be signed to access
+                  videos, metadata and annotations. These will also be available
+                  for reviewing and signing from this webpage.
                 </p>
               </div>
             </div>
@@ -829,9 +944,13 @@
               class="col-lg-6 col-md-6 col-xs-11 col-xs-offset-1 col-md-offset-0 col-lg-offset-0"
             >
               <div class="timeline-text-content">
-                <h4 class="small-title">I have already downloaded and signed Ego4D licenses before. Do I need to sign again?</h4>
+                <h4 class="small-title">
+                  I have already downloaded and signed Ego4D licenses before. Do
+                  I need to sign again?
+                </h4>
                 <p>
-                  Yes. As new university partners are part of this effort, a new license should be signed.
+                  Yes. As new university partners are part of this effort, a new
+                  license should be signed.
                 </p>
               </div>
             </div>
@@ -848,9 +967,9 @@
                 <h4 class="small-title">Who collected this data?</h4>
                 <p>
                   The data was collected from 839 participants. We showcase a
-                  distribution of age and gender from our
-                  participants who volunteered to self-identify their
-                  demographics — age and gender.
+                  distribution of age and gender from our participants who
+                  volunteered to self-identify their demographics — age and
+                  gender.
                 </p>
                 <div class="image">
                   <img
@@ -859,6 +978,13 @@
                     title="EGO4D Demographics"
                     loading="lazy"
                     width="100%"
+                    srcset="
+                      assets/images/400w/demographics.png   400w,
+                      assets/images/800w/demographics.png   800w,
+                      assets/images/1200w/demographics.png 1200w,
+                      assets/images/1600w/demographics.png 1600w
+                    "
+                    sizes="(max-width: 991px) 100vw, 40vw"
                   />
                 </div>
               </div>
@@ -873,7 +999,12 @@
                   Does the data contain identifying information of individuals?
                 </h4>
                 <p>
-                  Yes. Since the scenarios allow for closed environments (e.g., no passerby) nearly all video is available without de-identification. Refer to <a href=" http://ego-exo4d-data.org/paper/ego-exo4d.pdf">our paper</a>
+                  Yes. Since the scenarios allow for closed environments (e.g.,
+                  no passerby) nearly all video is available without
+                  de-identification. Refer to
+                  <a href=" http://ego-exo4d-data.org/paper/ego-exo4d.pdf"
+                    >our paper</a
+                  >
                   for details of our privacy and data collection pipeline.
                 </p>
               </div>
@@ -891,9 +1022,7 @@
                 <h4 class="small-title">
                   What coverage of scenarios do you have?
                 </h4>
-                <p>
-                  A sample visualisation of our scenarios is below.
-                </p>
+                <p>A sample visualisation of our scenarios is below.</p>
                 <div class="image">
                   <img
                     src="assets/images/scenarios.jpg"
@@ -901,7 +1030,13 @@
                     title="EGO4D Scenarios"
                     width="100%"
                     loading="lazy"
-                    width="100%"
+                    srcset="
+                      assets/images/400w/scenarios.jpg   400w,
+                      assets/images/800w/scenarios.jpg   800w,
+                      assets/images/1200w/scenarios.jpg 1200w,
+                      assets/images/1600w/scenarios.jpg 1600w
+                    "
+                    sizes="(max-width: 991px) 100vw, 40vw"
                   />
                 </div>
               </div>
@@ -913,10 +1048,12 @@
             >
               <div class="timeline-text-content">
                 <h4 class="small-title">
-                  What metadata, features and models are available with the dataset?
+                  What metadata, features and models are available with the
+                  dataset?
                 </h4>
                 <p>
-                  We will be releasing additional information with the dataset before the end of the year
+                  We will be releasing additional information with the dataset
+                  before the end of the year
                 </p>
               </div>
             </div>
@@ -932,10 +1069,28 @@
                   How does this dataset differ from Ego4D?
                 </h4>
                 <p>
-                  Ego4D collected unscripted daily life activities. Instead, we here focus on skilled activities specifically, ensuring participants of diverse levels of skill are recorded performing the same scenario, while maintaining distinctions natural to the scenario being carried out in a new environment. We cover both procedural and physical skilled activities. While some of these general scenarios have been captured in Ego4D (there are indeed examples of cooking, climbing or soccer), these are disjoint and do not record the same scenario making them unsuitable for tasks related to to keystep recognition or skill assessment.
+                  Ego4D collected unscripted daily life activities. Instead, we
+                  here focus on skilled activities specifically, ensuring
+                  participants of diverse levels of skill are recorded
+                  performing the same scenario, while maintaining distinctions
+                  natural to the scenario being carried out in a new
+                  environment. We cover both procedural and physical skilled
+                  activities. While some of these general scenarios have been
+                  captured in Ego4D (there are indeed examples of cooking,
+                  climbing or soccer), these are disjoint and do not record the
+                  same scenario making them unsuitable for tasks related to to
+                  keystep recognition or skill assessment.
                 </p>
-                  <p>Importantly, Ego-Exo4D is a multi-view dataset with synchronized egocentric and multiple exocentric view. This is the largest and most diverse effort for multi-view ego-exo data.</p>
-                  <p>The egocentric views are captured using the Aria Project devices.</p>
+                <p>
+                  Importantly, Ego-Exo4D is a multi-view dataset with
+                  synchronized egocentric and multiple exocentric view. This is
+                  the largest and most diverse effort for multi-view ego-exo
+                  data.
+                </p>
+                <p>
+                  The egocentric views are captured using the Aria Project
+                  devices.
+                </p>
               </div>
             </div>
           </div>
@@ -945,11 +1100,10 @@
             >
               <div class="timeline-text-content">
                 <h4 class="small-title">
-                  Will there be challenges and benchmarks associated with this dataset?
+                  Will there be challenges and benchmarks associated with this
+                  dataset?
                 </h4>
-                <p>
-                  Yes! Please stay tuned,
-                </p>
+                <p>Yes! Please stay tuned,</p>
               </div>
             </div>
             <span class="timeline-point"></span>
@@ -990,10 +1144,18 @@
                   <ul class="people_card__list">
                     <li>
                       Kris Kitani (PI)
-                      <a href="https://www.cs.cmu.edu/~kkitani/" target="_blank" rel="noopener noreferrer">
+                      <a
+                        href="https://www.cs.cmu.edu/~kkitani/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         <i class="fas fa-link"></i>
                       </a>
-                      <a href="https://twitter.com/kkitani" target="_blank" rel="noopener noreferrer">
+                      <a
+                        href="https://twitter.com/kkitani"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         <i class="fab fa-twitter"></i>
                       </a>
                     </li>
@@ -1248,10 +1410,18 @@
                   <ul class="people_card__list">
                     <li>
                       Santhosh Kumar Ramakrishnan
-                      <a href="https://srama2512.github.io/" target="_blank" rel="noopener noreferrer">
+                      <a
+                        href="https://srama2512.github.io/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         <i class="fas fa-link"></i>
                       </a>
-                      <a href="https://www.linkedin.com/in/srama2512/" target="_blank" rel="noopener noreferrer">
+                      <a
+                        href="https://www.linkedin.com/in/srama2512/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         <i class="fab fa-linkedin"></i>
                       </a>
                     </li>
@@ -1319,9 +1489,9 @@
                         rel="noopener noreferrer"
                         ><i class="fab fa-twitter"></i
                       ></a>
-                      <li>Francesco Ragusa</li>
-                      <li>Luigi Seminara</li>
                     </li>
+                    <li>Francesco Ragusa</li>
+                    <li>Luigi Seminara</li>
                   </ul>
                 </div>
               </div>
@@ -1346,17 +1516,32 @@
                   <ul class="people_card__list">
                     <li>
                       Yoichi Sato (PI)
-                      <a href="https://sites.google.com/ut-vision.org/ysato/" target="_blank" rel="noopener noreferrer"><i class="fas fa-link"></i></a>
+                      <a
+                        href="https://sites.google.com/ut-vision.org/ysato/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        ><i class="fas fa-link"></i
+                      ></a>
                     </li>
                     <li>Ryosuke Furuta</li>
                     <li>
                       Yifei Huang
-                      <a href="https://hyf015.github.io/" target="_blank" rel="noopener noreferrer"><i class="fas fa-link"></i></a>
+                      <a
+                        href="https://hyf015.github.io/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        ><i class="fas fa-link"></i
+                      ></a>
                     </li>
                     <li>Masatoshi Tateno</li>
                     <li>
                       Takuma Yagi
-                      <a href="https://artilects.net/" target="_blank" rel="noopener noreferrer"><i class="fas fa-link"></i></a>
+                      <a
+                        href="https://artilects.net/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        ><i class="fas fa-link"></i
+                      ></a>
                     </li>
                     <li>Zecheng Yu</li>
                   </ul>
@@ -1600,10 +1785,18 @@
                     <li>Angela Castillo</li>
                     <li>
                       Cristina Gonzalez
-                      <a href="https://cigonzalez.github.io" target="_blank" rel="noopener noreferrer">
+                      <a
+                        href="https://cigonzalez.github.io"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         <i class="fas fa-link"></i>
                       </a>
-                      <a href="https://www.linkedin.com/in/cristina-gonzález-5982831a0/" target="_blank" rel="noopener noreferrer">
+                      <a
+                        href="https://www.linkedin.com/in/cristina-gonzález-5982831a0/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         <i class="fab fa-linkedin"></i>
                       </a>
                     </li>
@@ -1649,84 +1842,98 @@
                       ><i class="fas fa-map-marker-alt"></i> International</span
                     >
                   </p>
-                    <ul class="people_card__list">
-                      <p class="center-bold">
-                        FAIR
-                      </p>
-                      <li>
-                        Kristen Grauman (PI)
-                        <a href="https://www.cs.utexas.edu/users/grauman/" target="_blank" rel="noopener noreferrer">
-                          <i class="fas fa-link"></i>
-                        </a>
-                      </li>
-                      <li>Andrew Westbury</li>
-                      <li>Lorenzo Torresani</li>
-                      <li>
-                        Kris Kitani (PI)
-                        <a href="https://www.cs.cmu.edu/~kkitani/" target="_blank" rel="noopener noreferrer">
-                          <i class="fas fa-link"></i>
-                        </a>
-                        <a href="https://twitter.com/kkitani" target="_blank" rel="noopener noreferrer">
-                          <i class="fab fa-twitter"></i>
-                        </a>
-                      </li>
-                      <li>Jitendra Malik</li>
-                      <li>Triantafyllos Afouras</li>
-                      <li>Ashutosh Kumar</li>
-                      <li>Feng Cheng</li>
-                      <li>Fu-Jen Chu</li>
-                      <li>Jing Huang</li>
-                      <li>Suyog Jain</li>
-                      <li>Devansh Kukreja</li>
-                      <li>Kevin Liang</li>
-                      <li>Sagnik Majumder</li>
-                      <li>Miguel Martin</li>
-                      <li>Effrosyni Mavroudi</li>
-                      <li>
-                        Tushar Nagarajan
-                        <a href="https://tushar-n.github.io/" target="_blank" rel="noopener noreferrer">
-                          <i class="fas fa-link"></i>
-                        </a>
-                      </li>
-                      <li>Yale Song</li>
-                      <li>Sherry Xue</li>
-                      <li>Miao Liu
-                        <a href="https://aptx4869lm.github.io/" target="_blank" rel="noopener noreferrer"><i class="fas fa-link"></i></a>
-                      </li>
-                      <li>Brighid Meredith</li>
-                      <li>Austin Miller</li>
-                      <li>Huiyu Wang</li>
-                      <li>Xitong Yang</li>
-                      <li>Shengxin Cindy Zha</li>
-                    </ul>
-                    <p class="center-bold">
-                      Aria
-                    </p>
-                    <ul class="people_card__list">
-                      <li>Vijay Baiyya</li>
-                      <li>Jing Dong</li>
-                      <li>Prince Gupta</li>
-                      <li>Sach Lakhavani</li>
-                      <li>Xiaqing Pan</li>
-                      <li>Kiran Somasundaram</li>
-                      <li>Mingfei Yan</li>
-                      <li>Jakob Engel</li>
-                      <li>Richard Newcombe</li>
-                    </ul>
-                    <p class="center-bold">
-                      HALO
-                    </p>
-                    <ul class="people_card__list">
-                      <li>Jiabo Hu</li>
-                      <li>Robert Kuo</li>
-                      <li>Penny Peng</li>
-                    </ul>
-                    <p class="center-bold">
-                      Research Intern
-                    </p>
-                    <ul class="people_card__list">
-                      <li>Shraman Pramanick</li>
-                    </ul>
+                  <ul class="people_card__list">
+                    <p class="center-bold">FAIR</p>
+                    <li>
+                      Kristen Grauman (PI)
+                      <a
+                        href="https://www.cs.utexas.edu/users/grauman/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <i class="fas fa-link"></i>
+                      </a>
+                    </li>
+                    <li>Andrew Westbury</li>
+                    <li>Lorenzo Torresani</li>
+                    <li>
+                      Kris Kitani (PI)
+                      <a
+                        href="https://www.cs.cmu.edu/~kkitani/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <i class="fas fa-link"></i>
+                      </a>
+                      <a
+                        href="https://twitter.com/kkitani"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <i class="fab fa-twitter"></i>
+                      </a>
+                    </li>
+                    <li>Jitendra Malik</li>
+                    <li>Triantafyllos Afouras</li>
+                    <li>Ashutosh Kumar</li>
+                    <li>Feng Cheng</li>
+                    <li>Fu-Jen Chu</li>
+                    <li>Jing Huang</li>
+                    <li>Suyog Jain</li>
+                    <li>Devansh Kukreja</li>
+                    <li>Kevin Liang</li>
+                    <li>Sagnik Majumder</li>
+                    <li>Miguel Martin</li>
+                    <li>Effrosyni Mavroudi</li>
+                    <li>
+                      Tushar Nagarajan
+                      <a
+                        href="https://tushar-n.github.io/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <i class="fas fa-link"></i>
+                      </a>
+                    </li>
+                    <li>Yale Song</li>
+                    <li>Sherry Xue</li>
+                    <li>
+                      Miao Liu
+                      <a
+                        href="https://aptx4869lm.github.io/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        ><i class="fas fa-link"></i
+                      ></a>
+                    </li>
+                    <li>Brighid Meredith</li>
+                    <li>Austin Miller</li>
+                    <li>Huiyu Wang</li>
+                    <li>Xitong Yang</li>
+                    <li>Shengxin Cindy Zha</li>
+                  </ul>
+                  <p class="center-bold">Aria</p>
+                  <ul class="people_card__list">
+                    <li>Vijay Baiyya</li>
+                    <li>Jing Dong</li>
+                    <li>Prince Gupta</li>
+                    <li>Sach Lakhavani</li>
+                    <li>Xiaqing Pan</li>
+                    <li>Kiran Somasundaram</li>
+                    <li>Mingfei Yan</li>
+                    <li>Jakob Engel</li>
+                    <li>Richard Newcombe</li>
+                  </ul>
+                  <p class="center-bold">HALO</p>
+                  <ul class="people_card__list">
+                    <li>Jiabo Hu</li>
+                    <li>Robert Kuo</li>
+                    <li>Penny Peng</li>
+                  </ul>
+                  <p class="center-bold">Research Intern</p>
+                  <ul class="people_card__list">
+                    <li>Shraman Pramanick</li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -1745,11 +1952,12 @@
           <div class="col-lg-3 col-md-4 col-xs-12 voffset-16">
             <p>
               <b
-                >The dataset will be available for download before the end of December 2023</b
+                >The dataset will be available for download before the end of
+                December 2023</b
               ><br /><br />
               License forms should be signed to access videos, metadata and
               annotations. <br />
-            <!--  <a
+              <!--  <a
                 class="btn btn-primary btn-translucent"
                 role="button"
                 target="_blank"
