@@ -856,14 +856,14 @@ a.btn-translucent {
 }
 
 .divider-line:before {
-  top: 60px;
+  top: 5rem;
   bottom: 0;
   position: absolute;
   content: "";
-  width: 0.5px;
+  width: 2px;
   background-color: #7030a0;
   left: calc(50% - 1px);
-  height: calc(100% - 3rem);
+  height: calc(100% - 2.5rem);
   opacity: 0.35;
 }
 
