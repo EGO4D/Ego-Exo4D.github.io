@@ -424,7 +424,7 @@ a.btn-translucent {
 .card-content {
   position: relative;
   width: 100%;
-  padding: 20px 44px 25px;
+  padding: 1.5em;
   background-color: #ffffff;
   transition: all 0.3s ease;
 }
@@ -446,7 +446,7 @@ a.btn-translucent {
 
 .card-image {
   display: flex;
-  height: 190px;
+  height: 256px;
   justify-content: center;
   position: relative;
   z-index: 5;
@@ -484,6 +484,7 @@ a.btn-translucent {
   max-height: 100%;
   height: auto;
   align-self: center;
+  object-fit: contain;
 }
 
 .tab-image {
