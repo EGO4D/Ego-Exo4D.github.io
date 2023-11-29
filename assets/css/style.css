@@ -567,9 +567,9 @@ a.btn-translucent {
 }
 #parallax-video.fade-in {
   opacity: 1;
-  transition: opacity 0.25s 0.5s;
-  -webkit-transition: opacity 0.25s 0.5s;
-  -moz-transition: opacity 0.25s 0.5s;
+  transition: opacity 0.25s 0.25s;
+  -webkit-transition: opacity 0.25s 0.25s;
+  -moz-transition: opacity 0.25s 0.25s;
 }
 
 #parallax-image > .container-fluid {
