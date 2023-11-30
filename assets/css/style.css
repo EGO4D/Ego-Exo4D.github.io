@@ -855,7 +855,7 @@ a.btn-translucent {
   word-break: normal;
 }
 
-.divider-line:before {
+.divider-line::before {
   top: 5rem;
   bottom: 0;
   position: absolute;
@@ -1231,7 +1231,7 @@ footer {
   }
 
   .timeline-point,
-  .divider-line:before {
+  .divider-line::before {
     left: 0 !important;
   }
 
