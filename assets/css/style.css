@@ -860,9 +860,9 @@ a.btn-translucent {
   bottom: 0;
   position: absolute;
   content: "";
-  width: 2px;
+  width: 4px;
   background-color: #7030a0;
-  left: calc(50% - 1px);
+  left: calc(50% - 2px);
   height: calc(100% - 2.5rem);
   opacity: 0.35;
 }
