@@ -855,14 +855,17 @@ a.btn-translucent {
   word-break: normal;
 }
 
+.divider-line {
+  position: relative;
+}
 .divider-line::before {
   top: 5rem;
   bottom: 0;
   position: absolute;
   content: "";
-  width: 4px;
+  width: 2px;
   background-color: #7030a0;
-  left: calc(50% - 2px);
+  left: calc(50% - 1px);
   height: calc(100% - 2.5rem);
   opacity: 0.35;
 }
